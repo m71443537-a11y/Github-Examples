@@ -28,16 +28,16 @@ since we are using github codspaces we create a temporary directory in our works
 mkdir /workspaces/temp
 cd /workspaces/temp
 ```
+
+>To connect your github codespaces to your vscode you use three ways `HTTPS` `SSH` `Github-CLI` 
+
 ## HTTPS
 
 ```sh
 git clone https://github.com/MY-FIRST-ORG-41/Github-Examples.git
-```
-```sh
 cd Github-Examples
 ```
 
->To connect your github codespaces to your vscode you use three ways `HTTPS` `SSH` `Github-CLI` 
 For `HTTPS` you can genrate a personal access token (PAT).
 
 ```sh
@@ -121,42 +121,18 @@ gh repo clone MY-FIRST-ORG-41/Github-Examples
 
 ## Commits
 
-<<<<<<< HEAD
-when we want to commit code we wrtie git commit which will open up the commit edit message in the editor of choice
-=======
-<<<<<<< Updated upstream
-## Branches
-
-=======
-When we want to commit code we wrtie git commit which will open up the commit edit message in the editor of choice
->>>>>>> main
+when we want to commit code we wrtie git commit which will open up the commit edit message in the editor of choice .
 
 ```sh
 git commit
 ```
-<<<<<<< HEAD
-set the global editor
-=======
-Set the global editor
->>>>>>> main
+When you commit anything to be update .
 
-```sh
-git config --global core.editor emacs
-```
-
-<<<<<<< HEAD
-make a commit and commit message without openning an editor
-=======
-Make a commit and commit message without openning an editor
-
->>>>>>> main
 ```sh
 git commit -m "Add another exclamation"
 ```
 
-<<<<<<< HEAD
-=======
-> When you create an unwanted commit like before add the file and then add the file and again commit and then push they show you two commits so remove the unwanted commit you use .
+> When you create an unwanted commit like before add the file and then add file and again commit and then push they show you two commits so remove the unwanted commit you use .
 
 ```sh
 git stash
@@ -164,15 +140,18 @@ git rebase -i HEAD~2
 git stash pop
 git push origin dev --force-with-lease
 ```
-
 To see your local history .
 
 ```sh
 git log --online
 ```
 
+When you set your global editor .
 
->>>>>>> main
+```sh
+git config --global core.editor emacs
+```
+
 ## Branches
 
 To create a branch .
@@ -193,29 +172,49 @@ To switched between two branches .
 ```sh
 git checkout branch-name
 ```
+
 To delete the branch .
 
 ```sh
 git branch -d branch-name
 ```
 
-<<<<<<< HEAD
-  
-
-=======
 To push your remote branch like which one you create .
 
 ```sh
 git push -u origin branch-name
 ```
 
->>>>>>> Stashed changes
->>>>>>> main
 ## Remotes
+
+We can add remotes via upstream adding a branch .
+
+```sh
+git remote add ...
+git branch -u origin new-feature
+```
 
 ## Stashing
 
+When you save your data to anywhere to rebase it and then pop it out you use stashing .
+
+```sh
+git stash list
+git stash
+git stash save my-name
+git stash apply
+git stash pop
+```
+
 ## Merging
+
+When you merge between two branches you use .
+
+```sh
+git checkout dev
+git merge main
+```
+
 
 ## Add
 
@@ -233,7 +232,9 @@ To remove a folder
 ```sh
 rm -rf .git/
 ```
+
 To remove file
+
  ```sh
  rm Readme.md
  ```
@@ -248,7 +249,7 @@ git add .
 git reset
 ```
 
->git reset will revert a git add .
+> git reset will revert a git add .
 
 ## Status
 
@@ -290,4 +291,10 @@ When we want to push a repo to our remote origin
 
 ```sh
 git push
+```
+
+To push your remote branch like which one you create .
+
+```sh
+git push -u origin branch-name
 ```
