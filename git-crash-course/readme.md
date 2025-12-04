@@ -299,6 +299,14 @@ To push your remote branch like which one you create .
 git push -u origin branch-name
 ```
 
+When you overwrite your github branch with your local branch you use .
+
+```sh
+git push origin branch-name --force
+```
+
+It is dangerous becuase it overwrite all your github branch code with your local branch and you only see the code of your local branch in github and etc .
+
 ## pull
 
 The git pull command functions to update a local Git repository with changes from a remote repository. It is a convenience command that combines two other Git commands: git fetch and git merge .
