@@ -1,8 +1,13 @@
 name: Mark stale issues and pull requests
 
 on:
+  workflow_dispatch:          # Manual run
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '* * * * *'      # Every minute for testing
+  issues:                     # Trigger on new or edited issues
+    types: [opened, edited]
+  pull_request:               # Trigger on new or edited PRs
+    types: [opened, edited]
 
 jobs:
   stale:
@@ -16,7 +21,17 @@ jobs:
       - uses: actions/stale@v5
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          stale-issue-message: 'Stale issue message'
-          stale-pr-message: 'Stale pull request message'
+          
+          # Stale thresholds for testing
+          days-before-issue-stale: 1
+          days-before-pr-stale: 1
+          days-before-issue-close: 1
+          days-before-pr-close: 1
+          
+          # Messages
+          stale-issue-message: 'This issue is stale.'
+          stale-pr-message: 'This PR is stale.'
+          
+          # Labels
           stale-issue-label: 'no-issue-activity'
           stale-pr-label: 'no-pr-activity'
