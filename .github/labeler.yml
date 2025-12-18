@@ -1,0 +1,9 @@
+documentation:
+  - '**/*.md'
+
+ci:
+  - '.github/workflows/**'
+
+bug:
+  - '**/*.log'
+  - '**/*.error'
